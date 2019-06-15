@@ -5,16 +5,25 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {CustomerComponent} from './customer/customer.component';
+import {RouterModule} from '@angular/router';
+
+const routs = [
+  {path: 'customer', component: CustomerComponent}
+];
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routs)
   ],
   providers: [],
   bootstrap: [AppComponent]

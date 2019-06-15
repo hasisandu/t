@@ -1,0 +1,24 @@
+#main-wrap {
+  width: 100%;
+  height: 655px;
+  background-size: cover;
+}
+
+#top {
+  height: 8%;
+  width: 100%;
+  background-color: #3C8DBC;
+}
+
+#left {
+  height: 92%;
+  width: 20%;
+  background-color: #222D32;
+  float: left;
+}
+
+#count-aria {
+  width: 100%;
+  height: 20%;
+  background-color: #ECF0F5;
+}
