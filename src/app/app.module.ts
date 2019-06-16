@@ -7,6 +7,8 @@ import {LoginComponent} from './login/login.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {CustomerComponent} from './customer/customer.component';
 import {RouterModule} from '@angular/router';
+import {ItemComponent} from './item/item.component';
+import {OrderComponent} from './order/order.component';
 
 const routs = [
   {path: 'customer', component: CustomerComponent}
@@ -18,7 +20,9 @@ const routs = [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    CustomerComponent
+    CustomerComponent,
+    ItemComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
