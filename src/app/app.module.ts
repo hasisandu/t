@@ -10,8 +10,12 @@ import {RouterModule} from '@angular/router';
 import {ItemComponent} from './item/item.component';
 import {OrderComponent} from './order/order.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 const routs = [
-  {path: 'customer', component: CustomerComponent}
+  {path: 'customer', component: CustomerComponent, data: {page: 'one'}},
+  {path: 'item', component: ItemComponent, data: {page: 'two'}},
+  {path: 'order', component: OrderComponent, data: {page: 'three'}}
 ];
 
 
@@ -25,6 +29,7 @@ const routs = [
     OrderComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routs)

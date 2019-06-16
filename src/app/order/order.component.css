@@ -1,0 +1,38 @@
+#wrap {
+  width: 100%;
+  background-color: #1D1E1E;
+  height: 470px;
+  padding-top: 20px;
+}
+
+#searchbar {
+  width: 1000px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-left: 310px;
+  padding: 10px 20px 0px 20px;
+}
+
+#content {
+  width: 1000px;
+  height: 370px;
+  padding: 0px;
+  margin-left: 310px;
+  margin-top: 10px;
+
+}
+
+#left {
+  width: 250px;
+  height: 370px;
+  float: left;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#right {
+  width: 700px;
+  height: 370px;
+  float: right;
+  padding: 20px 20px 20px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+}

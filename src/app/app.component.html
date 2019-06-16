@@ -5,8 +5,16 @@
   <div id="left">
 
     <ul class="list-group" style="margin-bottom: 20px;">
-      <a routerLink="/customer" style="text-decoration: none; color: white">
+      <a routerLinkActive="active" routerLink="/customer" style="text-decoration: none; color: white">
         <li class="list-group-item" style="background-color: #1E282C; border: 0px; border-radius: 0px;">Customer</li>
+      </a>
+
+      <a routerLinkActive="active" routerLink="/order" style="text-decoration: none; color: white">
+        <li class="list-group-item" style="background-color: #1E282C; border: 0px; border-radius: 0px;">Order</li>
+      </a>
+
+      <a routerLinkActive="active" routerLink="/item" style="text-decoration: none; color: white">
+        <li class="list-group-item" style="background-color: #1E282C; border: 0px; border-radius: 0px;">Item</li>
       </a>
     </ul>
 
@@ -16,8 +24,8 @@
 
   </div>
 
-  <router-outlet>
-
-  </router-outlet>
+  <div class="main" [@animRoutes]="getPage(appOutlet)">
+    <router-outlet #appOutlet="outlet"></router-outlet>
+  </div>
 
 </div>
