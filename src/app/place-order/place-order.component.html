@@ -1,0 +1,110 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row" style="margin: 0px;">
+      <div class="col-sm-12">
+        <div class="form-group" style="float: left; margin-left: 50px;">
+          <label for="customerid">Customer Id</label>
+          <select class="form-control" id="customerid" style="width: 100px" (click)="setCusData()"
+                  [(ngModel)]="customerid">
+            <option *ngFor="let tempcusid of Customers" value="{{tempcusid.cusid}}">{{tempcusid.cusid}}</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="float: left; margin-left: 50px;">
+          <label for="CustomerName">Customer Name</label>
+          <input readonly class="form-control" id="CustomerName" [(ngModel)]="customername" type="text"
+                 style="width: 200px"/>
+        </div>
+
+        <div class="form-group" style="float: left; margin-left: 50px;">
+          <label for="Address">Address</label>
+          <input readonly class="form-control" id="Address" [(ngModel)]="customeradress" style="width: 300px"
+                 type="text"/>
+
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <div class="form-group" style="float: left; margin-left: 50px;">
+          <label for="itemID">Item ID</label>
+          <select class="form-control" id="ItemID" style="width: 100px" (click)="setItemData()" [(ngModel)]="itemid">
+            <option *ngFor="let tempitem of items" value="{{tempitem.itemid}}">{{tempitem.itemid}}</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="float: left; margin-left: 50px;">
+          <label for="itemname">Item Name</label>
+          <input readonly class="form-control" id="itemname" type="text" style="width: 100px" [(ngModel)]="itemname"/>
+        </div>
+
+        <div class="form-group" style="float: left; margin-left: 50px;">
+          <label for="discribe">Discribe</label>
+          <input readonly class="form-control" id="discribe" style="width: 250px" type="text" [(ngModel)]="discribe"/>
+        </div>
+
+        <div class="form-group" style="float: left; margin-left: 50px;">
+          <label for="qtyOnHand">QTy On Hand</label>
+          <input readonly class="form-control" id="qtyOnHand" style="width: 100px" type="text" [(ngModel)]="qtyonhand"/>
+        </div>
+
+        <div class="form-group" style="float: left; margin-left: 50px;">
+          <label for="price">Price</label>
+          <input readonly class="form-control" id="price" style="width: 100px" type="text" [(ngModel)]="price"/>
+        </div>
+
+      </div>
+
+      <hr>
+      <div class="col-sm-12">
+
+        <div class="form-group" style="float: left; margin-left: 50px;">
+          <label for="qty">QTY</label>
+          <input class="form-control" id="qty" style="width: 100px" type="text" [(ngModel)]="qty"/>
+        </div>
+
+        <div class="form-group" style="float: left; margin-left: 50px;">
+          <input value="Place Order" class="btn btn-outline-primary" id="place" style="width: 100px; margin-top: 32px"
+                 type="button" (click)="addOrder()"/>
+        </div>
+
+      </div>
+
+      <div style="overflow: auto; width: auto;margin-left: 10px; height: 150px; float: left">
+        <table class="table table-hover table-bordered">
+          <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Item ID</th>
+            <th>Item Name</th>
+            <th>Describe</th>
+            <th>Item Price</th>
+            <th>QTY</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let x of order">
+            <td>{{neworderid}}</td>
+            <td>{{Dupitemid}}</td>
+            <td>{{Dupitemname}}</td>
+            <td>{{Dupdiscribe}}</td>
+            <td>{{Dupprice}}</td>
+            <td>{{qty}}</td>
+            <td>{{(+qty) * (+Dupprice)}}</td>
+            <td><i class="fas fa-minus" (click)="remove(x)"></i></td>
+          </tr>
+          </tbody>
+        </table>
+
+
+      </div>
+
+      <label class="alert alert-info" style="height: 50px; margin: 0px 20px 0px 20px">Total Price= {{total}} /=</label>
+
+      <input type="button" class="btn btn-primary" value="Submit Order"
+             style="float: right; height: 50px; margin-left: 20px">
+
+    </div>
+  </div>
+</div>

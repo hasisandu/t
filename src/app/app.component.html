@@ -1,27 +1,88 @@
 <div id="main-wrap">
   <div id="top">
 
+
   </div>
   <div id="left">
 
+    <img src="https://www.h2b.nl/wp-content/uploads/2014/08/business-man.png" alt=""
+         style="width: 120px; height: 130px;">
+    <h3 style="color: white; font-size: 15px; font-weight: bold; margin-left: 50px; margin-top: 50px">Mr: Kamal
+      Silva</h3>
+    <p style="color: white; font-size: 15px; font-weight: bold; margin-left: 50px;margin-bottom: 5px">C001:Admin</p>
+    <hr style="width: 100px; background-color: aqua; height: 1px;">
+
     <ul class="list-group" style="margin-bottom: 20px;">
-      <a routerLinkActive="active" routerLink="/customer" style="text-decoration: none; color: white">
-        <li class="list-group-item" style="background-color: #1E282C; border: 0px; border-radius: 0px;">Customer</li>
+      <a routerLink="/customer" style="text-decoration: none; color: white">
+        <li routerLinkActive="active current" class="list-group-item"
+            style="background-color: #1E282C; border: 0px; border-radius: 0px;">Customer
+        </li>
       </a>
 
-      <a routerLinkActive="active" routerLink="/order" style="text-decoration: none; color: white">
-        <li class="list-group-item" style="background-color: #1E282C; border: 0px; border-radius: 0px;">Order</li>
+      <a routerLink="/order" style="text-decoration: none; color: white">
+        <li routerLinkActive="active current" class="list-group-item"
+            style="background-color: #1E282C; border: 0px; border-radius: 0px;">Order
+        </li>
       </a>
 
-      <a routerLinkActive="active" routerLink="/item" style="text-decoration: none; color: white">
-        <li class="list-group-item" style="background-color: #1E282C; border: 0px; border-radius: 0px;">Item</li>
+      <a routerLink="/item" style="text-decoration: none; color: white">
+        <li routerLinkActive="active current" class="list-group-item"
+            style="background-color: #1E282C; border: 0px; border-radius: 0px;">Item
+        </li>
+      </a>
+
+      <a routerLink="/placeOrder" style="text-decoration: none; color: white;">
+        <li routerLinkActive="active current" class="list-group-item"
+            style=" border: 0px;background-color: #3498db; border-radius: 0px;">Place Order
+        </li>
+      </a>
+
+      <a routerLink="/reports" style="text-decoration: none; color: white">
+        <li routerLinkActive="active current" class="list-group-item"
+            style="background-color: #1E282C; border: 0px; border-radius: 0px;">Reports
+        </li>
+      </a>
+
+      <a routerLink="/item" style="text-decoration: none; color: white">
+        <li routerLinkActive="active current" class="list-group-item"
+            style="background-color: #1E282C; border: 0px; border-radius: 0px;">Widgets
+        </li>
+      </a>
+
+      <a routerLink="/item" style="text-decoration: none; color: white">
+        <li routerLinkActive="active current" class="list-group-item"
+            style="background-color: #1E282C; border: 0px; border-radius: 0px;">Mailbox
+        </li>
       </a>
     </ul>
 
   </div>
 
   <div id="count-aria">
+    <div class="customerdiv">
+      <div id="customer">Customers</div>
+      <div class="cusinnerdiv">
 
+        <h1 style="margin-top: 50px; font-weight: bold; color: navy; margin-left: 20px;">{{Customers.length}}</h1>
+
+      </div>
+    </div>
+    <div class="customerdiv">
+      <div id="order">Orders</div>
+      <div class="cusinnerdiv">
+        <h1 style="margin-top: 50px; font-weight: bold; color: navy; margin-left: 20px;">{{orders.length}}</h1>
+      </div>
+    </div>
+    <div class="customerdiv">
+      <div id="item">Items</div>
+      <div class="cusinnerdiv">
+        <h1 style="margin-top: 50px; font-weight: bold; color: navy; margin-left: 20px;">{{Customers.length}}</h1>
+      </div>
+    </div>
+    <div class="customerdiv">
+      <div id="dailyincome">Daily Income</div>
+      <div class="cusinnerdiv"></div>
+    </div>
   </div>
 
   <div class="main" [@animRoutes]="getPage(appOutlet)">

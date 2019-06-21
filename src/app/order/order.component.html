@@ -2,8 +2,11 @@
 
   <div id="searchbar">
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="search here">
-      <div class="input-group-append"
+      <input type="text" class="form-control" placeholder="search here" list="customers" [(ngModel)]="serachid">
+      <datalist id="customers" (click)="setID($event)">
+        <option *ngFor="let item of orders" value="{{item.orderid}}">{{item.orderid}}</option>
+      </datalist>
+      <div class="input-group-append" (click)="setdata()"
            style="padding: 5px 20px 0px 20px; background-color: #130f40; border: 1px solid #ECF0F5; color: #ECF0F5">
         SEARCH
       </div>
@@ -12,58 +15,44 @@
 
   <div id="content">
     <div id="left">
-      <form>
-        <input type="text" placeholder="customer id" class="form-control"
-               style="width: 90%; margin-left: 5%; margin-top: 10px">
-        <input type="text" placeholder="first Name" class="form-control"
-               style="width: 90%; margin-left: 5%; margin-top: 10px">
-        <input type="text" placeholder="Last Name" class="form-control"
-               style="width: 90%; margin-left: 5%; margin-top: 10px">
-        <textarea class="form-control" style="width: 90%; margin-left: 5%; margin-top: 10px"
-                  placeholder="address"></textarea>
-        <input type="button" class="btn btn-primary" value="Save"
-               style=" width:40%; float: left; margin-left: 5%; margin-top: 10px">
-        <input type="button" class="btn btn-warning" value="Update"
-               style=" width:40%; float: right; margin-right: 5%; margin-top: 10px">
-      </form>
+
+      <i class="fas fa-folder-plus" style="font-size: 25px; color: white; margin: 10px 0px 10px 10px" id="add"
+         routerLink="/placeOrder"></i>
+
+
+      <input type="text" [(ngModel)]="temporderid" class="form-control" readonly
+             style="width: 90%; margin-left: 5%; margin-top: 10px">
+      <input type="text" placeholder="Customer ID" class="form-control" [(ngModel)]="cusid"
+             style="width: 90%; margin-left: 5%; margin-top: 10px">
+      <input type="date" class="form-control" [(ngModel)]="orderdate"
+             style="width: 90%; margin-left: 5%; margin-top: 10px">
+      <input type="text" placeholder="Price" class="form-control" [(ngModel)]="price"
+             style="width: 90%; margin-left: 5%; margin-top: 10px">
+
+      <input type="button" class="btn btn-warning" value="Update" (click)="updateData()"
+             style=" width:40%; float: right; margin-right: 5%; margin-top: 10px">
+
+
     </div>
     <div id="right">
       <table class="table table-striped table-dark table-hover">
         <thead>
         <tr>
-          <th>CusID</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Address</th>
+          <th>Order ID</th>
+          <th>Customer ID</th>
+          <th>Order Date</th>
+          <th>Price</th>
+          <th></th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>C001</td>
-          <td>Hasika</td>
-          <td>Sandaruwan</td>
-          <td>Colombo<i style="font-size: 15px; color: burlywood; margin-left: 20px;" class="fas fa-trash-alt"></i><i
-            style="font-size: 15px; color: #ECF0F5; margin-left: 20px;" class="fas fa-pen"></i></td>
-        </tr>
-        <tr>
-          <td>C001</td>
-          <td>Hasika</td>
-          <td>Sandaruwan</td>
-          <td>Colombo<i style="font-size: 15px; color: burlywood; margin-left: 20px;" class="fas fa-trash-alt"><i
-            style="font-size: 15px; color: #ECF0F5; margin-left: 20px;" class="fas fa-pen"></i></i></td>
-        </tr>
-        <tr>
-          <td>C001</td>
-          <td>Hasika</td>
-          <td>Sandaruwan</td>
-          <td>Colombo<i style="font-size: 15px; color: burlywood; margin-left: 20px;" class="fas fa-trash-alt"><i
-            style="font-size: 15px; color: #ECF0F5; margin-left: 20px;" class="fas fa-pen"></i></i></td>
-        </tr>
-        <tr>
-          <td>C001</td>
-          <td>Hasika</td>
-          <td>Sandaruwan</td>
-          <td>Colombo<i style="font-size: 15px; color: burlywood; margin-left: 20px;" class="fas fa-trash-alt"></i><i
+        <tr *ngFor="let temp of orders;">
+          <td>{{temp.orderid}}</td>
+          <td>{{temp.customerid}}</td>
+          <td>{{temp.orderdate}}</td>
+          <td>{{temp.price}}</td>
+          <td><i style="font-size: 15px; color: burlywood; margin-left: 20px;" class="fas fa-trash-alt"
+                 (click)="deleteData(temp)"></i><i
             style="font-size: 15px; color: #ECF0F5; margin-left: 20px;" class="fas fa-pen"></i></td>
         </tr>
         </tbody>

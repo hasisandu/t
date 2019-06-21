@@ -22,4 +22,84 @@
   width: 100%;
   height: 20%;
   background-color: #ECF0F5;
+  padding-top: 5px;
+  padding-left: 310px;
+}
+
+.customerdiv {
+  width: 250px;
+  height: 120px;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+#customer {
+  background-image: url("../assets/FlagGreen.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 50px;
+  position: absolute;
+  margin-top: 10px;
+
+  color: #ECF0F5;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 3px;
+
+}
+
+#order {
+  background-image: url("../assets/fetured.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 50px;
+  position: absolute;
+  margin-top: 10px;
+
+  color: #ECF0F5;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 3px;
+}
+
+#item {
+  background-image: url("../assets/Flag.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 50px;
+  position: absolute;
+  margin-top: 10px;
+
+  color: blue;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 3px;
+}
+
+#dailyincome {
+  background-image: url("../assets/fetured.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 50px;
+  position: absolute;
+  margin-top: 10px;
+
+  color: #ECF0F5;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 3px;
+}
+
+.cusinnerdiv {
+  width: 231px;
+  height: 120px;
+  border: 1px solid green;
+  float: right;
+  border-radius: 10px;
 }

@@ -1,5 +1,9 @@
 import {Component} from '@angular/core';
 import {animate, animateChild, group, query, style, transition, trigger} from '@angular/animations';
+import {Customer} from './dto/Customer';
+import {CustomerService} from './service/customer.service';
+import {Orders} from './dto/Orders';
+import {OrderrService} from './service/orderr.service';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +39,23 @@ import {animate, animateChild, group, query, style, transition, trigger} from '@
   ]
 })
 export class AppComponent {
+
+  Customers: Customer[] = [];
+  orders: Orders[] = [];
+
+  constructor(private customerService: CustomerService, private orderrService: OrderrService) {
+    this.customerService.getAllCustomers().subscribe(result => {
+      this.Customers = result;
+
+    });
+
+    this.orderrService.getAllOrders().subscribe(result => {
+      this.orders = result;
+      console.log(this.orders);
+    });
+
+  }
+
 
   getPage(outlet) {
     return outlet.activatedRouteData.page || 'one';
